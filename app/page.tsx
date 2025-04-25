@@ -2,6 +2,7 @@
 
 import { useChat } from "@ai-sdk/react"
 import { useRef, useEffect } from "react"
+import ReactMarkdown from "react-markdown"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
@@ -62,7 +63,7 @@ export default function ChatPage() {
                       {message.parts.map((part, index) => {
                         switch (part.type) {
                           case "text":
-                            return <span key={index}>{part.text}</span>
+                            return <ReactMarkdown key={index}>{part.text}</ReactMarkdown>
                           case "tool-invocation":
                             const toolInvocation = part.toolInvocation
                             switch (toolInvocation.state) {
