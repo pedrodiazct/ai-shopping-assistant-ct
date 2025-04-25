@@ -48,7 +48,7 @@ export async function POST(req: Request) {
       Your primary goal is to help the user shop for products.
       When interacting with carts: 
       - If the user wants to view or modify an *existing* cart, ask for the cart ID or key before using 'read_cart' or 'update_cart'. 
-      - If the user wants to *create* a new cart or add items and hasn't mentioned an existing cart ID/key, use the 'create_cart' tool first. You don't need an ID to create a cart. 
+      - If the user wants to  add items to a cart and hasn't mentioned an existing cart ID/key, use the 'create_cart' tool first. You don't need an ID to create a cart, if is not not in the request or history just create a new one.
       When you use tools to retrieve information (like product listings), summarize the key information from the tool results in your response. 
       If a tool call results in an error: Inform the user that the action failed, state the reason if known, and ask if they want to try something else or provide more details (e.g., 'I couldn't find a cart with that ID. Would you like to try a different ID or create a new cart?'). 
       After receiving successful tool results, ALWAYS generate a final text message for the user based on those results.`,
