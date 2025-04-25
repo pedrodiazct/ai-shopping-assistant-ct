@@ -40,7 +40,9 @@ It uses the Vercel AI SDK for language model interaction and UI components, and 
 
 ### Environment Variables
 
-Create a `.env.local` file in the root of the project and add your commercetools and OpenAI credentials:
+Create a `.env.local` file in the root of the project and add your commercetools and OpenAI credentials.
+
+You can obtain your commercetools API client credentials (Client ID, Client Secret, Project Key, Auth URL, API URL) from the commercetools Merchant Center under **Settings > Developer settings**. Follow the instructions here: [Create an API Client](https://docs.commercetools.com/getting-started/create-api-client).
 
 ```env
 # commercetools API Credentials
