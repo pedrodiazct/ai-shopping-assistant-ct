@@ -1,4 +1,7 @@
-# AI Shopping Assistant for commercetools
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Flgiavedoni%2Fai-shopping-assistant-ct&env=OPENAI_API_KEY,PROJECT_KEY,CLIENT_SECRET,CLIENT_ID,AUTH_URL,API_URL)
+
+# AI Shopping Assistant for Commercetools
 
 This project provides a template for building an AI-powered shopping assistant that connects to a commercetools project.
 
