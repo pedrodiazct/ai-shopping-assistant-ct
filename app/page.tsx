@@ -2,6 +2,7 @@
 
 import { useChat } from "@ai-sdk/react"
 import { useRef, useEffect } from "react"
+import Image from 'next/image'
 import ReactMarkdown from "react-markdown"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -26,8 +27,8 @@ export default function ChatPage() {
       <Card className="w-full max-w-2xl shadow-lg">
         <CardHeader className="border-b">
           <CardTitle className="flex items-center gap-2">
-            <Bot className="h-5 w-5 text-primary" />
-            AI Chatbot
+            <Image src="/commercetools.webp" alt="Commercetools Logo" width={50} height={50} className="text-primary" />
+            AI Shop Assistant
           </CardTitle>
         </CardHeader>
 
