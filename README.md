@@ -4,7 +4,7 @@
 
 This project provides a template for building an AI-powered shopping assistant that connects to a commercetools project.
 
-It uses the Vercel AI SDK for language model interaction and UI components, and the commercetools Agent Toolkit to allow the AI to interact with the commercetools API via function calling.
+It uses the Vercel AI SDK for language model interaction and UI components, and commercetools MCP Essentials to allow the AI to interact with the commercetools API via tool calling (MCP).
 
 ## Demo
 
@@ -18,7 +18,7 @@ It uses the Vercel AI SDK for language model interaction and UI components, and 
 *   [Next.js](https://nextjs.org/) - React framework for building the application.
 *   [Vercel AI SDK Core (`ai`)](https://sdk.vercel.ai/docs) - For backend AI interactions, streaming, and tool handling.
 *   [Vercel AI SDK UI (`@ai-sdk/react`)](https://sdk.vercel.ai/docs/ai-sdk-ui) - For frontend chat components (`useChat` hook).
-*   [commercetools Agent Toolkit (`@commercetools-demo/ct-agent-toolkit`)](https://github.com/commercetools-demo/ct-agent-toolkit) - Provides tools for the AI to interact with commercetools APIs (products, carts, orders, etc.).
+*   [commercetools MCP Essentials (`@commercetools/mcp-essentials`)](https://github.com/commercetools/mcp-essentials) - Provides MCP tools to interact with commercetools APIs (products, carts, orders, etc.).
 *   [OpenAI](https://openai.com/) - The language model used for the assistant (specifically GPT-4o in this template).
 *   [shadcn/ui](https://ui.shadcn.com/) - UI components for the chat interface.
 *   [Tailwind CSS](https://tailwindcss.com/) - For styling.
@@ -81,7 +81,7 @@ Open [http://localhost:3000](http://localhost:3000) in your browser to see the a
 
 ## Key Components
 
-*   **`app/api/chat/route.ts`**: The backend API route that handles chat requests. It initializes the Vercel AI SDK and the commercetools Agent Toolkit, configures the AI model (OpenAI GPT-4o), defines the system prompt, sets up the available commercetools tools, and uses `streamText` to process messages and handle tool calls.
+*   **`app/api/chat/route.ts`**: The backend API route that handles chat requests. It initializes the Vercel AI SDK and commercetools MCP Essentials, configures the AI model (OpenAI GPT-4o), defines the system prompt, sets up the available commercetools tools, and uses `streamText` to process messages and handle tool calls.
 *   **`app/page.tsx`**: The frontend chat interface. It uses the `useChat` hook from `@ai-sdk/react` to manage chat state, render messages (including text and tool invocation status), and handle user input.
 
 ## How it Works
@@ -90,7 +90,7 @@ Open [http://localhost:3000](http://localhost:3000) in your browser to see the a
 2.  The `useChat` hook sends the message history to the backend API route (`app/api/chat/route.ts`).
 3.  The backend uses the Vercel AI SDK's `streamText` function with the OpenAI model and the commercetools tools.
 4.  The AI determines if it needs to use a commercetools tool (like searching for products or managing a cart) based on the user's request and the available tools.
-5.  If a tool is needed, the AI SDK calls the corresponding function from the commercetools Agent Toolkit.
+5.  If a tool is needed, the AI SDK calls the corresponding tool provided by commercetools MCP Essentials.
 6.  The toolkit function makes the API call to commercetools using the provided credentials.
 7.  The results from the tool (or an error) are sent back to the AI model.
 8.  The AI model generates a response for the user based on the tool results or its own knowledge.

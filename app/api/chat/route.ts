@@ -1,7 +1,7 @@
 import { openai } from "@ai-sdk/openai"
 // import { generateText } from "ai" // Remove generateText
 import { streamText } from "ai" // Add streamText
-import { CommercetoolsAgentToolkit } from "@commercetools-demo/ct-agent-toolkit/ai-sdk"
+import { CommercetoolsAgentToolkit } from "@commercetools/mcp-essentials/ai-sdk"
 import 'dotenv/config'
 
 // Allow streaming responses up to 30 seconds
